@@ -1,0 +1,25 @@
+select:
+
+
+    num_replicates: 10
+    num_train_samples:
+        start : 50
+        stop : 250
+        step : 50
+    num_test_samples: 500
+    
+    models:
+       -
+        model_name: svm
+        feature_list_indices: all
+        hyperparameters:
+            C : 1
+            gamma : 0.001
+        predict_proba: True
+    
+    todo_list:
+       -
+        feature_file: /Users/rsankar/Desktop/HVCHackathon/HVC/HVC_out/extract_output_220114_220444/summary_feature_file_created_220114_220505
+
+        output_dir: /Users/rsankar/Desktop/HVCHackathon/HVC/HVC_out/
+

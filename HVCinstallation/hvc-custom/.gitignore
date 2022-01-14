@@ -1,0 +1,11 @@
+.cache/
+*.egg-info/
+build/*
+dist/*
+MANIFEST
+*.pyc
+.ipynb_checkpoints
+dir_names.txt
+.idea/
+docs/_build
+docs_old/
