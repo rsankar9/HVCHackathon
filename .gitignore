@@ -1,3 +1,6 @@
+# Ignore tracking heavy data files.
 SampleData/CSC1.smr
 HVC/Training
-#Installation/HVCinstallation/hvc-custom
+
+# Ignore tracing hvc module. It has been moved to `/anaconda3/envs/hvcenv/lib/python3.9/site-packages`
+Installation/HVCinstallation/hvc-custom
