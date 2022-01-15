@@ -1,4 +1,4 @@
-##README
+## README
 
 ## Data Analysis of SMR files
 **In progress**
@@ -73,8 +73,8 @@ Optional:
 
 2. Alternatively, extract songfiles from all recording directories (follow template), and split them into chunks, as a batch.
 	```
-	python extractSongfile.sh ../SampleData/	```
-
+	python extractSongfile.sh ../SampleData/
+	```
 
 ----
 
