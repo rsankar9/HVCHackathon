@@ -1,4 +1,4 @@
-##README
+## README
 
 Here, we attempt to generate the annotations for songs in an smr file, automatically.
 
