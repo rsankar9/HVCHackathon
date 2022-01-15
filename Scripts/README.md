@@ -2,7 +2,7 @@
 
 ## Data Analysis of SMR files
 **In progress**
-The goal here is to automatically label songs.
+The goal here is to prepare the files to feed to HVC for automatic labelling of songs.
 
 #### Acknowledgements
 - Eduarda Centeno
@@ -15,12 +15,8 @@ Update: Python 3.9 is required, due to SonPy package (used in CedIO).
 
 
 #### Requirements
-conda create --name hvcenv python=3.9 numpy scipy scikit-learn matplotlib pyyaml keras tensorflow
-conda activate hvcenv
-pip install neo
-pip install SoundFile
-pip3 install PyQt5
-pip3 install sonpy
+- HVCHackathon/Installation/requirements.txt
+- HVCHackathon/Installation/hvcenv.yml
 
 ---
 
@@ -31,42 +27,35 @@ pip3 install sonpy
 
 3. Check if neo is able to read the file and extract the songfile in npy format.
     ```
-    python get_song_from_smr.py file_name.smr  
-    ```
-    ```
-    python get_song_from_smr.py ../SampleData/CSC1.smr 
+    python get_song_from_smr.py <path>/<file_name>.smr
     ```  
-
-4. Slice the songfile into smaller chunks.
+    E.g. ```python get_song_from_smr.py ../SampleData/CSC1.smr```
+    
+4. Slice the songfile into smaller chunks.  
 	```
 	python Slicing_Songfile.py <path>/songfile_name.npy
-	```
-	```
-	python Slicing_Songfile.py ../SampleData/CSC20_Songfile.npy 
-	```
+	```  
+	E.g. ```python Slicing_Songfile.py ../SampleData/CSC20_Songfile.npy```
 
 5. Check the thresholds for syllable segmentation.
 	```
 	python Auxilliary_support.py <path>/songfile_name.npy
-	```
-	```
-	python Auxilliary_support.py ../SampleData/CSC20_Songfile.npy 
-	```
+	```  
+	E.g. ```python Auxilliary_support.py ../SampleData/CSC20_Songfile.npy```
 	
 6. Modify the parameters in the file ```parameters.json``` to test new thresholds.
 
 7. Remove the chunks that only contain silence. 
 	```
 	python Detect_syllables.py <path-to-parent-folder-of-Raw_songs>
-	```
+	```  
+	E.g. ```python Detect_syllables.py ../SampleData/```
 	
 8. Use an IDE which allows plots to be rendered outside the window (or the terminal), with a suitable backend, and annotate as many songs as required (~100).
 	```
 	python Manual_labeling.py <path-to-parent-folder-of-Clean_songs>
-	```
-	```
-	python Manual_labeling.py ../SampleData/
-	```
+	```  
+	E.g. ```python Manual_labeling.py ../SampleData/```
 
 
 9. Use ```HVC``` to automatically label the rest of the syllables. (Detailed instructions in HVC folder.)
@@ -91,20 +80,22 @@ Optional:
 
 ### Folder: Syllables_processing
 
+
+#### Script: Slicing_Songfile.py
+
+- This scripts extracts the song from the smr file and splits it into smaller chunks (txt), for ease in further processing.
+- To run: `python Slicing_Songfile.py path_to_file.smr`.
+
+
 #### Script: Auxilliary_support.py
 
 - This scripts plots the song in an npy/txt file, in an interactive manner.
 - Not meant to be a generic code for public use.
 - Just an auxilliary file to quickly visualise the song and adjust the syllable segmenting parameters.
 - Parameters should be adjusted per bird in the json file.
-- Requires Python >3.7.3 and other packages.
 - If the file is too big, uncomment line 81-83 and modify to select portions of the file.
 - To run: `python Auxilliary_support.py path_to_npy_file.npy` or `python Auxilliary_support.py path_to_txt_file.txt`.
 
-#### Script: Slicing_Songfile.py
-
-- This scripts extracts the song from the smr file and splits it into smaller chunks (txt), for ease in further processing.
-- To run: `python Slicing_Songfile.py path_to_file.smr`.
 
 #### Script: Detect_syllables.py
 

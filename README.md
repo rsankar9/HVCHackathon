@@ -5,17 +5,15 @@ Here, we attempt to generate the annotations for songs in an smr file, automatic
 Files provided:
 
 - Directory: HVCHackathon
-- Contains 5 folders
+- Contains 4 folders
 	- Scripts 
 	- SampleData
-	- HVCinstallation
 	- HVC
 	- Installation
 
 Step 1: We will first setup our environment with all required installations.
 
-Follow README.md in installation folder.
-
+Follow README.md in folder `HVCHackathon/Installation `.
 
 Step 2: We shall generate annotations automatically.
 

@@ -15,6 +15,24 @@ Python 3.9 is required for the Remya's version.
 
 ---
 
+#### TLDR:
+
+- Path and segmenting parameteres in config files should be updated for each run.
+- To run, open a python console, then:
+
+	```
+	import hvc
+	
+	hvc.extract('Extract.yml')
+	
+	hvc.select('Select.yml')
+	
+	hvc.predict('Predict.yml')
+	```
+
+--- 
+
+#### Detailed version:
 
 1. Use the `Manual_labeling.py` script to annotate as many songs (~100) as required.
 2. Split these files into a training set (80%) and test set (20%).
@@ -22,11 +40,13 @@ Python 3.9 is required for the Remya's version.
 4. Copy the annotations to the corresponding folders named `Training_Songs_annot` and `Test_Songs_annot`.
 5. Create a folder `Test_Songs_predict`.
 6. Modify `Extract.yml` with the right chunking parameters as used for manual labeling, and update the paths for input and output.
-7. Run it in a python console. `hvc.extract('Extract.yml')`
+7. Open a python console: `python` in the terminal.
+8. Import the module: `import hvc` in the python console.
+7. Run it in a python console: `hvc.extract('Extract.yml')`
 8. Modify `Select.yml` with the paths to the feature file and output.
-9. Run it in a python console, and choose the model with the best score. `hvc.select('Select.yml')`
+9. Run it in a python console, and choose the model with the best score: `hvc.select('Select.yml')`
 10. Modify `Predict.yml` with the paths to the chosen model meta file and folder with new songs.
-11. Run it in a python console. `hvc.predict('Predict.yml')`
+11. Run it in a python console: `hvc.predict('Predict.yml')`
 12. HVC will produce corresponding annotations in the local `Test_Songs_predict` folder.
 13. Manually verify the annotations produced by the model in this folder.
 14. Now, the training and testing is done, and we can generate the labels for the original song file, e.g. `CSC20_songfile.npy`.
@@ -35,3 +55,6 @@ Python 3.9 is required for the Remya's version.
 17. Modify `Predict.yml` with the path to this folder with the songfile.
 18. Run it in a python console. `hvc.predict('Predict.yml')`
 19. HVC will produce corresponding annotations in the local `Test_Songs_predict` folder.
+
+
+---
