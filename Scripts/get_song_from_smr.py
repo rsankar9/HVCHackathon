@@ -6,16 +6,21 @@ Just a script to test the smr data file with some basic functions
 """
 
 from songbird_data_analysis import functions
-import sys
+import sys, os
 import json
 
 filename = sys.argv[1]
-parameters = json.load(open('parameters.json'))
 
-print('Getting song.')
-functions.getsong(filename, parameters['songChannelName'])
+if not os.path.isfile(filename):
+	print('File not found: ', filename)
 
-print('All good.')
+else:
+	parameters = json.load(open('parameters.json'))
+
+	print('Getting song.')
+	functions.getsong(filename, parameters['songChannelName'])
+
+	print('All good.')
 
 
 # print('Reading file.')

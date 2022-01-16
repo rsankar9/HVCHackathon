@@ -53,6 +53,6 @@ def getsong(file, songChannelName):
         analog_index = index
         songData = seg_neo.analogsignals[analog_index].load().as_array()
         np.save(os.path.dirname(file) + "/" + songChannelName + "_Songfile.npy", songData)
-        print("Saved in ", os.path.dirname(file) + "/" + songChannelName + "_Songfile.npy")
+        print("Songfile saved in ", os.path.dirname(file) + "/" + songChannelName + "_Songfile.npy")
 
         break
