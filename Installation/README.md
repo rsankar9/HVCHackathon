@@ -54,13 +54,19 @@ Ideally, a good place to put it is `/anaconda3/envs/hvcenv/lib/python3.9/site-pa
 ---
 ---
 
-#### For Python virtual environment users:
+#### For Python virtual environment users (Windows):
 
 ```
-cd HVCHackathon/Installation/
-pip3 install -r requirements.txt Eduarda?
-source activate ??
-pip3 install -e HVCinstallation/hvc-custom ??
-```
+# Create env w venv
+python3 -m venv path/to/env/
+
+# Activate env
+path/to/env/Scripts/activate
+
+# Install reqs in env
+path/to/env/Scripts/python.exe -m pip install -r path/to/requirements_venv.txt
+
+# Install hvc-custom
+path/to/env/Scripts/python.exe -m pip install path/to/HVCinstallation/hvc-custom
 
 ---
