@@ -1,0 +1,20 @@
+select:
+  num_replicates: 3
+  num_train_samples:
+    start : 200
+    stop : 400
+    step : 200
+  num_test_samples: 400
+
+  models:
+    -
+      model_name: flatwindow
+      hyperparameters:
+        batch_size: 32
+        epochs : 3
+      neuralnet_input: flatwindow
+
+  todo_list:
+    - #1
+      feature_file : replace with feature_file
+      output_dir: replace with tmp_output_dir
