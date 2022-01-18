@@ -93,7 +93,11 @@ Optional:
 - Not meant to be a generic code for public use.
 - Just an auxilliary file to quickly visualise the song and adjust the syllable segmenting parameters.
 - Parameters should be adjusted per bird in the json file.
-- If the file is too big, uncomment line 81-83 and modify to select portions of the file.
+- Control the portion of the song file to be plotted, by using the json file.
+- By default, only the first 30seconds of the file is displayed.
+- To change the starting position, change 'start_pos' in terms of sample index.
+- To change the duration to plot, change 'display_duration' in seconds.
+- To plot the entire file, set start_pos as 0 and display_duration as any number longer than the file.
 - To run: `python Auxilliary_support.py path_to_npy_file.npy` or `python Auxilliary_support.py path_to_txt_file.txt`.
 
 
@@ -118,7 +122,7 @@ Optional:
 
 - Folder with sample config files to run HVC syllable labeler.
 - Path and segmenting parameteres in config files should be updated for each run.
-- To run:
+- To run, move to HVC folder and:
 
 `hvc.extract('Extract.yml')`
 

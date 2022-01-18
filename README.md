@@ -38,7 +38,7 @@ Started by showing an example SMR w songs (CSC20 in this case)
 
 - cd to directory with scripts
 - Activate conda env
-- Run testDataFile.py on SampleData/CSC1.smr to get the song channel as .npy
+- Run get_song_from_smr.py on SampleData/CSC1.smr to get the song channel as .npy
 - Check the channel was collected correctly by converting it to wav and opening any audio software. (conv_npy_to_wav.py)
 - Slice data into several chunks for manual labelling with Slicing_Songfile.py
 - Segment song with auxiliary_support.py (to visualize and choose right parameters like threshold).

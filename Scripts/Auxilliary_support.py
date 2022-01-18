@@ -73,14 +73,15 @@ print('size=',rawsong.size, 'shape=',rawsong.shape)
 s=rawsong.size
 
 # Comment out from here if not required
-# CHANGE XI AND XN TO VIEW ONLY PORTIONS OF THE FILE
-## The file will be divided into xn portions and only portion no. xi+1 will be plotted
-## For e.g. xn = 4, xi = 3
-## This will cut the file into four parts and only plot the last (i.e. fourth) part
+# CHANGE start and end TO VIEW ONLY PORTIONS OF THE FILE
+# The file will be displayed from start to end (in terms of sample index)
+# You can modify start position in the json file.
+# By default, start position + 30seconds is plotted.
+# You can change this by changing display_duration in the json file.
 
 # Splits file according to how much data you want to view
 start = parameters['start_pos']
-end =  start + (30*fs)
+end =  start + (int(parameters['display_duration']*fs))
 rawsong = rawsong[start:end]
 
 # Comment out until here if not required
@@ -114,6 +115,7 @@ for i in range(0,shpe):
 # plt.figure()
 # plt.plot((x_amp/x_amp[-1])*len(t))
 # plt.show()
+
 # ##Plot song signal amplitude
 ax1.plot((x_amp/x_amp[-1])*len(t),rawsong,color='black')
 ax1.set_xlim([0, len(t)])
