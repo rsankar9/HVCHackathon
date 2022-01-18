@@ -78,27 +78,30 @@ s=rawsong.size
 ## For e.g. xn = 4, xi = 3
 ## This will cut the file into four parts and only plot the last (i.e. fourth) part
 
-xi = 40
-xn = 50
-rawsong = rawsong[xi*s//xn:(xi+1)*s//xn].reshape((xi+1)*s//xn-xi*s//xn,)     # Splits file according to how much data you want to view
+# Splits file according to how much data you want to view
+start = parameters['start_pos']
+end =  start + (30*fs)
+rawsong = rawsong[start:end]
+
 # Comment out until here if not required
 
-
+print(rawsong.shape)
 print(len(rawsong))
 
-amp = Song_functions.smooth_data(rawsong,fs,freq_cutoffs=(1000, 8000))
+amp = Song_functions.smooth_data(rawsong, fs, freq_cutoffs=(1000, 8000))
 print('amp:', amp, 'samp_freq:', fs)
 
 (onsets, offsets) = Song_functions.segment_song(amp,segment_params={'threshold': threshold, 'min_syl_dur': min_syl_dur, 'min_silent_dur': min_silent_dur},samp_freq=fs)    # Detects syllables according to the threshold you set
 shpe = len(onsets)                          # Use this to detect no. of onsets
 
 
-### Building figure
+# ### Building figure
 fig, (ax1, ax2, ax3) = plt.subplots(nrows=3, sharex=True)
 plt.setp(ax1.get_xticklabels(), visible=True)
 plt.setp(ax2.get_xticklabels(), visible=True)
 
 x_amp=np.arange(len(amp))
+
 
 # Plots spectrogram
 (f,t,sp)=scipy.signal.spectrogram(rawsong, fs, window, nperseg, noverlap, mode='complex')
@@ -107,15 +110,19 @@ for i in range(0,shpe):
     ax3.axvline(x=onsets[i]*len(t)/x_amp[-1],color='b',alpha=0.1)
     ax3.axvline(x=offsets[i]*len(t)/x_amp[-1],color='r',alpha=0.1)
 
-##Plot song signal amplitude
-ax1.plot(x_amp*len(t)/x_amp[-1],rawsong,color='black')
+# print(len(t))
+# plt.figure()
+# plt.plot((x_amp/x_amp[-1])*len(t))
+# plt.show()
+# ##Plot song signal amplitude
+ax1.plot((x_amp/x_amp[-1])*len(t),rawsong,color='black')
 ax1.set_xlim([0, len(t)])
 for i in range(0,shpe):
-    ax1.axvline(x=onsets[i]*len(t)/x_amp[-1],color='b')
+    ax1.axvline(x=(onsets[i]/x_amp[-1])*len(t),color='b')
     ax1.axvline(x=offsets[i]*len(t)/x_amp[-1],color='r')
 
-##Plot smoothed amplitude of the song
-ax2.plot(x_amp*len(t)/x_amp[-1], amp,color='black')
+# ##Plot smoothed amplitude of the song
+ax2.plot((x_amp/x_amp[-1])*len(t), amp,color='black')
 ax2.set_xlim([0, len(t)])
 # ax2.set_ylim([0, threshold+5e-8])
 for i in range(0,shpe):
