@@ -93,7 +93,7 @@ Optional:
 - Not meant to be a generic code for public use.
 - Just an auxilliary file to quickly visualise the song and adjust the syllable segmenting parameters.
 - Parameters should be adjusted per bird in the json file.
-- If the file is too big, uncomment line 81-83 and modify to select portions of the file.
+- By default, the plotting will happen with a start=0 (in parameters.json). If you want to see another portion, change that. Each portion will be 30s.
 - To run: `python Auxilliary_support.py path_to_npy_file.npy` or `python Auxilliary_support.py path_to_txt_file.txt`.
 
 
