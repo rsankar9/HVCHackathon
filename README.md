@@ -23,7 +23,14 @@ Step 2: We shall generate annotations automatically.
 - train model using HVC  
 	Follow `README.md` in folder `HVCHackathon/HVC`
 
+Step 3: Once HVC is trained for a bird, you can use only the HVC Predict script.
+ - Per new recording, extract the .npy for the song channel using get_song_from_smr.py 
+ - Copy this .npy yo Test_songs
+ - Run HVC predict (this will take all files in Test_songs, so leave there only the ones you need to sort).
+ - Labels will be outputed in Test_Songs_predict.
 
+Step 4: Remember that post processing is necessary. Inspect your predicted labels.txt and see how HVC mislabelled syllables, then correct them manually or with scripts.
+- Important: Please save all information per bird in the birds folder (e.g. hvc outputs, how you corrected labels, which labels you used, etc.). This is important for others to use your data.
 
 ---
 
