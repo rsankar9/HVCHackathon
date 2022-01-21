@@ -43,7 +43,7 @@ syl_counter=0
 Nb_syls=0
 keep_song =''
 #rec_system = 'Alpha_omega' # or 'Neuralynx' or 'Other'
-rec_system = 'Neuralynx'
+rec_system = parameters['rec_system']
 
 
 

@@ -56,7 +56,7 @@ syl_counter=0
 Nb_syls=0
 keep_song =''
 #rec_system = 'Alpha_omega' # or 'Neuralynx' or 'Other'
-rec_system = 'Neuralynx'
+rec_system = parameters['rec_system']
 
 
 
@@ -175,7 +175,7 @@ for file_num, songfile in enumerate(songfiles_list):
     x_amp=np.arange(len(amp))
 
     #Compute and plot spectrogram
-    (f,t,sp)=scipy.signal.spectrogram(rawsong, fs, window, nperseg, noverlap, mode='complex')
+    (f,t,sp)=scipy.signal.spectrogram(rawsong, fs, window, nperseg, noverlap, mode='complex', vmin=parameters['vmin'], vmax=parameters['vmax'])
     ax3.imshow(10*np.log10(np.square(abs(sp))), origin="lower", aspect="auto", interpolation="none")
     ax3.set_ylabel('Frequency')
     for i in range(0,shpe):    #Plot onsets and offsets

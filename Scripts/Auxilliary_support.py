@@ -41,9 +41,6 @@ min_silent_dur  =   parameters['min_silent_dur']
 rec_system =  parameters['rec_system']
 
 
-
-
-
 ##########
 
 if rec_system == 'Alpha_omega':

@@ -15,8 +15,10 @@ nperseg = 1024
 noverlap = nperseg-overlap
 colormap = "jet"
 
+parameters      =   json.load(open('parameters.json'))
+
 #rec_system = 'Alpha_omega' # or 'Neuralynx' or 'Other'
-rec_system = 'Neuralynx'
+rec_system = parameters['rec_system']
 
 
 
