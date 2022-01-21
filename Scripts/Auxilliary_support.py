@@ -80,7 +80,7 @@ s=rawsong.size
 # You can change this by changing display_duration in the json file.
 
 # Splits file according to how much data you want to view
-start = parameters['start_pos']
+start = int(parameters['start_pos'] * fs)
 end =  start + (int(parameters['display_duration']*fs))
 rawsong = rawsong[start:end]
 
