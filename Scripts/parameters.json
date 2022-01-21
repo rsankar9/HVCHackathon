@@ -4,5 +4,9 @@
     "min_syl_dur"                       :   0.02,
     "min_silent_dur"                    :   0.003,
     "start_pos"                         :   0,
-    "display_duration"                  :   30
+    "display_duration"                  :   30,
+    "rec_system"                        :   'Alpha_Omega',
+    "vmin"                              :   None,
+    "vmax"                              :   None
+    
 }
