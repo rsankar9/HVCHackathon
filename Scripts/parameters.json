@@ -5,8 +5,8 @@
     "min_silent_dur"                    :   0.003,
     "start_pos"                         :   0,
     "display_duration"                  :   30,
-    "rec_system"                        :   'Alpha_Omega',
-    "vmin"                              :   None,
-    "vmax"                              :   None
+    "rec_system"                        :   "Neuralynx",
+    "vmin"                              :   null,
+    "vmax"                              :   null
     
 }
