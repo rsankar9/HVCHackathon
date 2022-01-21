@@ -38,7 +38,7 @@ min_syl_dur     =   parameters['min_syl_dur']
 min_silent_dur  =   parameters['min_silent_dur']
 
 #rec_system = 'Alpha_omega' # or 'Neuralynx' or 'Other'
-rec_system = 'Neuralynx'
+rec_system =  parameters['rec_system']
 
 
 
@@ -80,7 +80,7 @@ s=rawsong.size
 # You can change this by changing display_duration in the json file.
 
 # Splits file according to how much data you want to view
-start = parameters['start_pos']
+start = int(parameters['start_pos'] * fs)
 end =  start + (int(parameters['display_duration']*fs))
 rawsong = rawsong[start:end]
 
@@ -92,7 +92,7 @@ print(len(rawsong))
 amp = Song_functions.smooth_data(rawsong, fs, freq_cutoffs=(1000, 8000))
 print('amp:', amp, 'samp_freq:', fs)
 
-(onsets, offsets) = Song_functions.segment_song(amp,segment_params={'threshold': threshold, 'min_syl_dur': min_syl_dur, 'min_silent_dur': min_silent_dur},samp_freq=fs)    # Detects syllables according to the threshold you set
+(onsets, offsets) = Song_functions.segment_song(amp, segment_params={'threshold': threshold, 'min_syl_dur': min_syl_dur, 'min_silent_dur': min_silent_dur},samp_freq=fs)    # Detects syllables according to the threshold you set
 shpe = len(onsets)                          # Use this to detect no. of onsets
 
 
@@ -106,7 +106,9 @@ x_amp=np.arange(len(amp))
 
 # Plots spectrogram
 (f,t,sp)=scipy.signal.spectrogram(rawsong, fs, window, nperseg, noverlap, mode='complex')
-ax3.imshow(10*np.log10(np.square(abs(sp))), origin="lower", aspect="auto", interpolation="none")
+ax3.imshow(10*np.log10(np.square(abs(sp))), origin="lower", aspect="auto", interpolation="none", vmin=parameters['vmin'], vmax=parameters['vmax'])
+print('Current vmin vmax values: ', ax3.get_images()[0].get_clim())
+
 for i in range(0,shpe):
     ax3.axvline(x=onsets[i]*len(t)/x_amp[-1],color='b',alpha=0.1)
     ax3.axvline(x=offsets[i]*len(t)/x_amp[-1],color='r',alpha=0.1)
