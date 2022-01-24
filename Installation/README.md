@@ -70,3 +70,8 @@ path/to/env/Scripts/python.exe -m pip install -r path/to/requirements_venv.txt
 path/to/env/Scripts/python.exe -m pip install path/to/HVCinstallation/hvc-custom
 
 ---
+
+
+Step 2: We need to make some changes in 2 scripts in hvc-custom.
+	1. Look for hvc-custom/hvc/audiofileIO.py, edit line 957 with YOUR PATH.
+	2. Look for hvc-custom/hvc/labelpredict.py, edit line 167 with YOUR PATH. 

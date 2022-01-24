@@ -9,6 +9,7 @@ Just a script to convert npy to wav for testing.
 import soundfile as sf
 import numpy as np
 import sys
+import json
 
 filename = sys.argv[1]
 npySong = np.load(sys.argv[1])

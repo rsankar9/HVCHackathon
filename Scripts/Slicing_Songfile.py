@@ -7,6 +7,7 @@ import numpy as np
 import os
 import glob
 import sys
+import json
 
 
 window =('hamming')
@@ -19,7 +20,11 @@ parameters      =   json.load(open('parameters.json'))
 
 #rec_system = 'Alpha_omega' # or 'Neuralynx' or 'Other'
 rec_system = parameters['rec_system']
-
+if rec_system == 'Alpha_omega':
+    fs = 22321.4283
+elif rec_system == 'Neuralynx':
+    fs = 32000
+print('fs:',fs)
 
 
 #---------------------------------------------------------------------------#
@@ -51,7 +56,7 @@ if not os.path.exists(raw_songs_dir_path):
     os.mkdir(raw_songs_dir_path)
 
 
-chunk_size = 120000
+chunk_size = fs * 4  # 4 seconds
 cn = 0
 
 print('no. of chunks:', np.ceil(rawsong.size / chunk_size))

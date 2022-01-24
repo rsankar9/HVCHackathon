@@ -1,6 +1,7 @@
 import warnings
 
 import numpy as np
+import json
 from scipy.io import wavfile
 import scipy.signal
 from matplotlib.mlab import specgram
@@ -953,7 +954,13 @@ def read_song_txt(filename):
     return(samp_freq, raw_audio)
 	
 def read_song_npy(filename):
-    samp_freq = 30303.0
+    parameters = json.load(open('C:/Users/eduar/Documents/Python/software/HVCHackathon/Scripts/parameters.json'))
+    if parameters['rec_system'] == 'Alpha_omega':
+        fs = 22321.4283
+    elif parameters['rec_system'] == 'Neuralynx':
+        fs = 32000
+    print('fs:',fs)
+    samp_freq = fs 
     raw_audio = []	
     raw_audio = np.load(filename)
     # print(raw_audio.shape)
@@ -965,8 +972,3 @@ def read_song_npy(filename):
         # print(raw_audio.shape)
 
     return(samp_freq, raw_audio)
-
-	
-
-
-

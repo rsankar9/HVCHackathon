@@ -6,6 +6,7 @@ using already-trained models specified in config file
 import os
 import sys
 import glob
+import json
 
 # from dependencies
 import yaml
@@ -163,6 +164,13 @@ def predict(config_file):
 				
                 elif todo['convert'] == 'txt':
                     print('converting to .txt files')
+                    parameters = json.load(open('C:/Users/eduar/Documents/Python/software/HVCHackathon/Scripts/parameters.json'))
+                    if parameters['rec_system'] == 'Alpha_omega':
+                        fs = 22321.4283
+                    elif parameters['rec_system'] == 'Neuralynx':
+                        fs = 32000
+                    print('fs:',fs)
+                    samp_freq = fs 
                     for curr_song_id, songfile_name in enumerate(songfiles):
                         these = np.asarray(songfile_IDs) == curr_song_id
                         pred_labels = ftr_file_dict['pred_labels'][these]
@@ -171,8 +179,6 @@ def predict(config_file):
                         segment_params = ftr_file_dict['segment_params']
                         #samp_freq = ftr_file_dict['samp_freq'][these]
                         #samp_freq, raw_audio = wavfile.read(songfile_name)
-						
-                        samp_freq = 30303.0
                         #with open(songfile_name) as f:
                         #     lines = f.readlines()
 		                #     #print(type(lines))
