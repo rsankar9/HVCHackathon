@@ -10,12 +10,12 @@ extract:
   -
     bird_ID : Bird27
     file_format: npy
-    labelset: abcdefghijklmnopqrstuvwxyz
+    labelset: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVZYW
     feature_group:
       - svm
     data_dirs: 
-      - /Users/rsankar/Desktop/HVCHackathon/HVC/Training/Training_Songs
+      - /Users/eduar/Documents/Python/software/HVCHackathon/HVC/Training/Training_Songs
 
-    output_dir: /Users/rsankar/Desktop/HVCHackathon/HVC/HVC_out
+    output_dir: /Users/eduar/Documents/Python/software/HVCHackathon/HVC/HVC_out
 
 

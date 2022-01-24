@@ -175,8 +175,8 @@ for file_num, songfile in enumerate(songfiles_list):
     x_amp=np.arange(len(amp))
 
     #Compute and plot spectrogram
-    (f,t,sp)=scipy.signal.spectrogram(rawsong, fs, window, nperseg, noverlap, mode='complex', vmin=parameters['vmin'], vmax=parameters['vmax'])
-    ax3.imshow(10*np.log10(np.square(abs(sp))), origin="lower", aspect="auto", interpolation="none")
+    (f,t,sp)=scipy.signal.spectrogram(rawsong, fs, window, nperseg, noverlap, mode='complex')
+    ax3.imshow(10*np.log10(np.square(abs(sp))), origin="lower", aspect="auto", interpolation="none", vmin=parameters['vmin'], vmax=parameters['vmax'])
     ax3.set_ylabel('Frequency')
     for i in range(0,shpe):    #Plot onsets and offsets
         ax3.axvline(x=onsets[i]*len(t)/x_amp[-1],color='b',alpha=0.2)

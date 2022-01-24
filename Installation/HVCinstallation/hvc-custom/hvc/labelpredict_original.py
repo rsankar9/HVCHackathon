@@ -125,7 +125,7 @@ def predict(config_file):
                         hvc.convert.to_notmat(songfile_name,
                                               pred_labels,
                                               model_name,
-                                              32000,
+                                              samp_freq,
                                               segment_params,
                                               onsets_s,
                                               offsets_s,

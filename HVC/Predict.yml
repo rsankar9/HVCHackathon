@@ -2,11 +2,11 @@ predict:
   todo_list:
     - #1
       bird_ID: Bird27
-      model_meta_file : /Users/rsankar/Desktop/HVCHackathon/HVC/HVC_out/select_output_220114_220537/svm_C1_gamma0.001/svm_200samples_replicate8.meta
+      model_meta_file : /Users/eduar/Documents/Python/software/HVCHackathon/HVC/HVC_out/select_output_220119_121233/svm_C1_gamma0.001/svm_200samples_replicate9.meta
       file_format: npy
       data_dirs:
-        - /Users/rsankar/Desktop/HVCHackathon/HVC/Training/Test_Songs/
+        - /Users/eduar/Documents/Python/software/HVCHackathon/HVC/Training/Test_Songs/
         
-      output_dir: /Users/rsankar/Desktop/HVCHackathon/HVC/HVC_out/
+      output_dir: /Users/eduar/Documents/Python/software/HVCHackathon/HVC/HVC_out/
       predict_proba: True
       convert: txt

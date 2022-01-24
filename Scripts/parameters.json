@@ -5,7 +5,7 @@
     "min_silent_dur"                    :   0.003,
     "start_pos"                         :   0,
     "display_duration"                  :   30,
-    "rec_system"                        :   "Neuralynx",
+    "rec_system"                        :   "Alpha_omega",
     "vmin"                              :   null,
     "vmax"                              :   null
     

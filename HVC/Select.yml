@@ -19,7 +19,7 @@ select:
     
     todo_list:
        -
-        feature_file: /Users/rsankar/Desktop/HVCHackathon/HVC/HVC_out/extract_output_220114_220444/summary_feature_file_created_220114_220505
+        feature_file: /Users/eduar/Documents/Python/software/HVCHackathon/HVC/HVC_out/extract_output_220119_114411/summary_feature_file_created_220119_114453
 
-        output_dir: /Users/rsankar/Desktop/HVCHackathon/HVC/HVC_out/
+        output_dir: /Users/eduar/Documents/Python/software/HVCHackathon/HVC/HVC_out/
 
