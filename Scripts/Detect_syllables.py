@@ -57,13 +57,13 @@ if os.path.isdir(folder_name) is False:
 
 print(folder_name)
 source_path = folder_name + '/Raw_songs'
-target_path_noise = folder_name + '/Noise_songs'
+target_path_noise = folder_name + '/No_songs'
 target_path_clean = folder_name + '/Clean_songs'
 if not os.path.exists(source_path):
     raise ValueError('Raw_songs folder does not exist.')
 if not os.path.exists(target_path_noise):
     os.mkdir(target_path_noise)
-    print('Created folder Noise.')
+    print('Created folder No_songs.')
 if not os.path.exists(target_path_clean):
     os.mkdir(target_path_clean)
     print('Created folder Clean.')
