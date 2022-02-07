@@ -21,11 +21,11 @@ def spectrogram(songfile, labelsfile, beg, end, fs, NFFT=512):
     labelsfile: str
         name of labels file
         
-    beg: float or int
-        time to zoom
+    beg:int
+        sample point to zoom
 
-    end: float or int
-        time to end
+    end: int
+        sample point to end zoom
     
     fs: float or int
         sampling frequency
