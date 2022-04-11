@@ -34,6 +34,17 @@ Step 4: Remember that post processing is necessary. Inspect your predicted label
 
 ---
 
+#### Important info!
+If  you want to add a new possiblity for sampling freq based on the rec_system, you will have to change the following files:
+1.	[HVCHackathon/Auxilliary_support.py](https://github.com/rsankar9/HVCHackathon/blob/main/Scripts/Auxilliary_support.py) (see line 50-51)
+2.	[HVCHackathon/Detect_syllables.py](https://github.com/rsankar9/HVCHackathon/blob/main/Scripts/Detect_syllables.py) (see lines 76-77)
+3.	[HVCHackathon/Manual_labeling.py](https://github.com/rsankar9/HVCHackathon/blob/main/Scripts/Manual_labeling.py) (see lines 135-136
+4.	[HVCHackathon/Slicing_Songfile.py](https://github.com/rsankar9/HVCHackathon/blob/main/Scripts/Slicing_Songfile.py) (see lines 27-28)
+5.	[HVCHackathon/conv_npy_to_wav.py](https://github.com/rsankar9/HVCHackathon/blob/main/Scripts/conv_npy_to_wav.py) (see lines 29-30)
+6.	[HVCHackathon/audiofileIO.py](https://github.com/rsankar9/HVCHackathon/blob/main/Installation/HVCinstallation/hvc-custom/hvc/audiofileIO.py) (see lines 962-963)
+7.	[HVCHackathon/labelpredict.py at main](https://github.com/rsankar9/HVCHackathon/blob/main/Installation/HVCinstallation/hvc-custom/hvc/labelpredict.py) (lines 172-173)
+
+
 
 #### Minutes of the HVC Hackathon session on Friday 14 Jan, 2022.
 
