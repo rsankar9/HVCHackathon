@@ -169,7 +169,7 @@ def predict(config_file):
                         fs = 22321.4283
                     elif parameters['rec_system'] == 'Neuralynx':
                         fs = 32000
-		    elif rec_system == 'Neuropixel':
+		    elif parameters['rec_system'] == 'Neuropixel':
     			fs = 32723.037368
 			
                     print('fs:',fs)
