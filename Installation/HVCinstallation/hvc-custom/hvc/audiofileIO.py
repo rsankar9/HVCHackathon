@@ -954,11 +954,14 @@ def read_song_txt(filename):
     return(samp_freq, raw_audio)
 	
 def read_song_npy(filename):
-    parameters = json.load(open('C:/Users/eduar/Documents/Python/software/HVCHackathon/Scripts/parameters.json'))
+    parameters = json.load(open('your/path/to/Scripts/parameters.json'))
     if parameters['rec_system'] == 'Alpha_omega':
         fs = 22321.4283
     elif parameters['rec_system'] == 'Neuralynx':
         fs = 32000
+    elif rec_system == 'Neuropixel':
+	fs = 32723.037368
+	
     print('fs:',fs)
     samp_freq = fs 
     raw_audio = []	
